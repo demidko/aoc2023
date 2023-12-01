@@ -9,7 +9,7 @@ mod aof_2023 {
                 .split('\n')
                 .map(extract_number)
                 .sum::<i32>();
-        println!("aof 2023 1.1 answer is {}", answer)
+        println!("{}", answer)
     }
 
     #[test]
@@ -40,7 +40,7 @@ mod aof_2023 {
                 .split('\n')
                 .map(|l| extract_ext_number(&written_digit_to_digit, l))
                 .sum::<i32>();
-        println!("aof 2023 1.2 answer is {}", answer)
+        println!("{}", answer)
     }
 
     fn extract_ext_number(digits: &HashMap<&str, char>, line: &str) -> i32 {
@@ -50,39 +50,21 @@ mod aof_2023 {
     }
 
     fn get_first_ext_digit(digits: &HashMap<&str, char>, line: &str) -> char {
-        let mut matches = Vec::new();
-        for &key in digits.keys() {
+        for (&key, value) in digits {
             if line.starts_with(key) {
-                matches.push(key)
+                return *value;
             }
         }
-        if matches.is_empty() {
-            get_first_ext_digit(digits, &line[1..])
-        } else {
-            find_min_key_value(digits, &matches)
-        }
+        get_first_ext_digit(digits, &line[1..])
     }
 
     fn get_last_ext_digit(digits: &HashMap<&str, char>, line: &str) -> char {
-        let mut matches = Vec::new();
-        for &key in digits.keys() {
+        for (&key, value) in digits {
             if line.ends_with(key) {
-                matches.push(key)
+                return *value;
             }
         }
-        if matches.is_empty() {
-            get_last_ext_digit(digits, &line[..(line.len() - 1)])
-        } else {
-            find_min_key_value(digits, &matches)
-        }
-    }
-
-    fn find_min_key_value(map: &HashMap<&str, char>, keys_found: &Vec<&str>) -> char {
-        let min_key =
-            keys_found.iter()
-                .min_by_key(|x| x.len())
-                .unwrap() as &str;
-        *map.get(min_key).unwrap()
+        get_last_ext_digit(digits, &line[..(line.len() - 1)])
     }
 
     fn extract_number(line: &str) -> i32 {
