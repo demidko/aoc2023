@@ -41,10 +41,6 @@ fn aof_1_2() {
     println!("aof 2023 1.2 answer is {}", answer)
 }
 
-fn reversed(str: &str) -> String {
-    str.chars().rev().collect::<String>()
-}
-
 fn extract_ext_number(digits: &HashMap<&str, char>, line: &str) -> i32 {
     let first_digit = get_first_ext_digit(digits, line);
     let last_digit = get_last_ext_digit(digits, line);
