@@ -6,4 +6,4 @@ All tasks are performed in one crate. You need Rust installed:
  cargo test -- --show-output
 ```
 
-_Please note that you may need to upload your own versions of the input files._
+Please note that you may need to upload your own versions of the input files.
