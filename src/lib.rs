@@ -1,5 +1,6 @@
 #[cfg(test)]
 mod aof_2023 {
+    use std::collections::HashMap;
 
     #[test]
     fn aof_1_1() {
