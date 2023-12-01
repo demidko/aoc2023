@@ -9,7 +9,7 @@ mod aof_2023 {
                 .split('\n')
                 .map(extract_number)
                 .sum::<i32>();
-        println!("{}", answer)
+        println!("aof 2023 1.1 answer is {}", answer)
     }
 
     #[test]
@@ -40,7 +40,7 @@ mod aof_2023 {
                 .split('\n')
                 .map(|l| extract_ext_number(&written_digit_to_digit, l))
                 .sum::<i32>();
-        println!("{}", answer)
+        println!("aof 2023 1.2 answer is {}", answer)
     }
 
     fn extract_ext_number(digits: &HashMap<&str, char>, line: &str) -> i32 {
