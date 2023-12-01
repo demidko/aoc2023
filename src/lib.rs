@@ -1,5 +1,5 @@
 #[cfg(test)]
-mod aof2023 {
+mod aof_2023 {
 
     #[test]
     fn aof_1_1() {
