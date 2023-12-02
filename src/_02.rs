@@ -1,13 +1,13 @@
 #[test]
 fn part_one() {
     let answer = include_str!("../02.input").trim().lines().filter_map(parse_game).sum::<i128>();
-    println!("{}", answer)
+    println!("Part One answer is {}", answer)
 }
 
 #[test]
 fn part_two() {
     let answer = include_str!("../02.input").trim().lines().map(parse_game_power).sum::<i128>();
-    println!("{}", answer)
+    println!("Part Two answer is {}", answer)
 }
 
 fn parse_game_power(game: &str) -> i128 {

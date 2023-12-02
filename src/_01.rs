@@ -3,7 +3,7 @@ use std::collections::HashMap;
 #[test]
 fn part_one() {
     let answer = include_str!("../01.input").trim().lines().map(extract_number).sum::<i32>();
-    println!("{}", answer);
+    println!("Part One answer is {}", answer);
 }
 
 #[test]
@@ -33,7 +33,7 @@ fn part_two() {
         include_str!("../01.input").trim().lines()
             .map(|l| extract_ext_number(&written_digit_to_digit, l))
             .sum::<i32>();
-    println!("{}", answer)
+    println!("Part Two answer is {}", answer)
 }
 
 fn extract_ext_number(digits: &HashMap<&str, char>, line: &str) -> i32 {
