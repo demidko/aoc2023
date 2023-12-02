@@ -18,8 +18,8 @@ fn parse_game_power(game: &str) -> i128 {
             .split("; ")
             .map(Rgb::from_color_set)
             .collect::<Vec<Rgb>>();
-    let rgb = Rgb::merge(&rgb_sets);
-    (rgb.r * rgb.g * rgb.b) as i128
+    let Rgb { r, g, b } = Rgb::merge(&rgb_sets);
+    (r * g * b) as i128
 }
 
 fn parse_game(src: &str) -> Option<i128> {
