@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 #[test]
 fn aof_1_1() {
-    let answer = include_str!("../1.input").lines().map(extract_number).sum::<i32>();
+    let answer = include_str!("01.input").lines().map(extract_number).sum::<i32>();
     println!("aof 2023 1.1 answer is {}", answer)
 }
 
@@ -30,7 +30,7 @@ fn aof_1_2() {
             ("nine", '9'),
         ]);
     let answer =
-        include_str!("../1.input").lines()
+        include_str!("01.input").lines()
             .map(|l| extract_ext_number(&written_digit_to_digit, l))
             .sum::<i32>();
     println!("aof 2023 1.2 answer is {}", answer)
@@ -38,13 +38,13 @@ fn aof_1_2() {
 
 #[test]
 fn aof_2_1() {
-    let answer = include_str!("../2.input").lines().filter_map(parse_game).sum::<i128>();
+    let answer = include_str!("02.input").lines().filter_map(parse_game).sum::<i128>();
     println!("aof 2023 2.1 answer is {}", answer)
 }
 
 #[test]
 fn aof_2_2() {
-    let answer = include_str!("../2.input").lines().map(parse_game_power).sum::<i128>();
+    let answer = include_str!("02.input").lines().map(parse_game_power).sum::<i128>();
     println!("aof 2023 2.2 answer is {}", answer)
 }
 
