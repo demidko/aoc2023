@@ -3,7 +3,7 @@
 All tasks are performed in one crate. You need Rust installed:
 
 ```shell
-cargo test -- --show-output
+cargo test --release -- --show-output
 ```
 
 Please note that you may need to upload your own versions of the input files.
