@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
 #[test]
-pub fn aof_1_1() {
+fn aof_1_1() {
     let answer =
         include_str!("../input.1")
             .lines()
@@ -11,7 +11,7 @@ pub fn aof_1_1() {
 }
 
 #[test]
-pub fn aof_1_2() {
+fn aof_1_2() {
     let written_digit_to_digit =
         HashMap::from([
             ("1", '1'),
@@ -42,13 +42,13 @@ pub fn aof_1_2() {
 }
 
 #[test]
-pub fn aof_2_1() {
+fn aof_2_1() {
     let answer = include_str!("../input.2").lines().filter_map(parse_game).sum::<i128>();
     println!("aof 2023 2.1 answer is {}", answer)
 }
 
 #[test]
-pub fn aof_2_2() {
+fn aof_2_2() {
     let answer = include_str!("../input.2").lines().map(parse_game_power).sum::<i128>();
     println!("aof 2023 2.2 answer is {}", answer)
 }
