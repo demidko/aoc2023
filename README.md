@@ -8,7 +8,7 @@ individually from the RustRover interface.
 You need Rust installed:
 
 ```shell
-cargo test --release -- --show-output
+cargo test -- --show-output
 ```
 
 Please note that you may need to upload your own versions of the input files. Replace the .input files in this directory
