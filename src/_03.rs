@@ -20,7 +20,7 @@ fn part_one() {
     println!("Day 3: Gear Ratios answer is {}", answer)
 }
 
-#[test]
+#[test] // todo
 fn part_two() {
     let mut answer =
         include_str!("../03.input")
