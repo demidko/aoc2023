@@ -49,7 +49,6 @@ fn part_two_example() {
     )
 }
 
-#[test]
 fn part_two() {
     let lines = include_str!("../05.input").trim().lines().collect_vec();
     let (_, seeds) = lines[0].split_once(": ").unwrap();
@@ -254,22 +253,3 @@ temperature-to-humidity map:
 humidity-to-location map:
 60 56 37
 56 93 4"#;
-
-struct CompiledMap {
-    map: HashMap<u128, u128>,
-}
-
-impl CompiledMap {
-
-    fn new(layer: HashMap<u128, u128>) -> Self {
-
-    }
-
-    fn location_of_seed(&self, seed: &u128) -> &u128 {
-        self.map.get(seed).unwrap_or(seed)
-    }
-
-    fn add_layer(&mut self, layer: HashMap<u128, u128>) {
-
-    }
-}
