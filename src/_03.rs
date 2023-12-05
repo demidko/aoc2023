@@ -104,75 +104,10 @@ fn extract_one_number(s: &str, gear_idx: usize) -> u128 {
     all_digits.parse::<u128>().unwrap()
 }
 
-fn get_first_digits(str: &str) -> &str {
-    for (idx, char) in str.char_indices() {
-        if char.is_ascii_digit().not() {
-            return &str[0..idx];
-        }
-    }
-    str
-}
-
-fn try_parse_number(s: &str, any_idx: usize) -> Option<i128> {
-    let char = char_at(s, any_idx);
-    if char.is_ascii_digit() {
-        let number = format!(
-            "{}{}{}",
-            digits_before(s, any_idx),
-            char,
-            digits_after(s, any_idx)
-        );
-        return number.parse::<i128>().ok();
-    }
-    None
-}
-
-fn digits_before(s: &str, any_idx: usize) -> String {
-    if any_idx == 0 {
-        return String::from("");
-    }
-    let s = s[0..any_idx].chars().rev().collect::<String>();
-    let mut stop = s.len();
-    for (i, c) in s.char_indices() {
-        if c.is_ascii_digit().not() {
-            stop = i;
-            break;
-        }
-    }
-    String::from(&s[0..stop])
-}
-
-fn digits_after(s: &str, any_idx: usize) -> &str {
-    if any_idx == s.len() - 1 {
-        return "";
-    }
-    let s = &s[any_idx + 1..];
-    let mut stop = s.len();
-    for (i, c) in s.char_indices() {
-        if c.is_ascii_digit().not() {
-            stop = i;
-            break;
-        }
-    }
-    &s[0..stop]
-}
-
-fn find_possible_number_indices(gear_idx: usize, limit: usize) -> Vec<usize> {
-    let mut result = Vec::new();
-    if gear_idx > 0 {
-        result.push(gear_idx - 1)
-    }
-    result.push(gear_idx);
-    if gear_idx < limit {
-        result.push(gear_idx + 1)
-    }
-    result
-}
-
 fn find_gears_indices(s: &str) -> Vec<usize> {
     s.char_indices()
-        .filter(|(i, c)| *c == '*')
-        .map(|(i, c)| i)
+        .filter(|(_, c)| *c == '*')
+        .map(|(i, _)| i)
         .collect_vec()
 }
 
