@@ -11,6 +11,7 @@ mod _03;
 mod _04;
 
 #[cfg(test)]
+#[allow(dead_code)]
 mod _05;
 
 #[cfg(test)]
